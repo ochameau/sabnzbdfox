@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>sabnzbd-fox@techno-barje.fr</em:id>
+    <em:type>2</em:type>
+    <em:name>sabnzbdfox</em:name>
+    <em:version>1.3-dev</em:version>
+    <em:description>Plug your sabnzbd in your firefox!</em:description>
+    <em:optionsURL>chrome://sabnzbdfox/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://sabnzbdfox/skin/sabnzbfox.png</em:iconURL>
+    
+    <em:creator>Alexandre Poirot; http://www.techno-barje.fr/</em:creator>
+    
+     <!-- Firefox -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>3.5</em:minVersion>
+        <em:maxVersion>14.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

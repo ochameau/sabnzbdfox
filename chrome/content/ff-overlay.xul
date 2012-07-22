@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://sabnzbdfox/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://sabnzbdfox/locale/overlay.dtd">
+<overlay id="sabnzbdfox-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="sabnzbdfox-strings" src="chrome://sabnzbdfox/locale/overlay.properties"/>
+  </stringbundleset>
+
+  <statusbar id="status-bar">
+    <statusbarpanel id="sabnzbfox-status" class="statusbarpanel-menu-iconic" label="NZB"
+                    ondblclick="sabnzbfox.viewSabnzb()" 
+                    onclick="if (event.button==2) document.getElementById('sabnzbfox-menu').showPopup();"
+                    tooltiptext="SabnzbFox" insertbefore="offline-status">
+      <label id="sabnzbfox-status-label" value="NZB" />
+      <menupopup id="sabnzbfox-menu">
+            <menuitem id="sabnzbfox-toggle" type="checkbox" label="Enable SabnzbFox" 
+                      oncommand="sabnzbfox.toggle()"
+                      tooltiptext="" />
+            <menuitem id="sabnzb-viewtarget" label="Open destination directory" 
+                      oncommand="sabnzbfox.viewTarget()"
+                      hidden="true"
+                      tooltiptext="" />
+            <menuitem label="Options" 
+                      oncommand="window.openDialog('chrome://sabnzbdfox/content/options.xul', '_new', 'chrome');"
+                      tooltiptext="" />
+            <menuitem label="Open sabnzbd webpage" 
+                      oncommand="sabnzbfox.viewSabnzb()"
+                      tooltiptext="" />
+      </menupopup>
+    </statusbarpanel>
+  </statusbar> 
+
+
+</overlay>

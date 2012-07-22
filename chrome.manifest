@@ -1,0 +1,6 @@
+content   sabnzbdfox                 chrome/content/
+skin      sabnzbdfox   classic/1.0   chrome/skin/
+locale    sabnzbdfox   en-US         chrome/locale/en-US/
+resource  sabnzbdfox                 modules/
+
+overlay   chrome://browser/content/browser.xul   chrome://sabnzbdfox/content/ff-overlay.xul

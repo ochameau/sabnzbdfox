@@ -1,0 +1,18 @@
+<!ENTITY prefwindow.title "SabnzbdFox preferences">
+<!ENTITY pane1.title "SabnzbdFox preferences">
+<!ENTITY enabledPref.label "enabled (catch nzb and retrieve jobs count)">
+<!ENTITY action.label "What do we do with NZBs files ?">
+<!ENTITY targetPref.label "Move them to a directory">
+<!ENTITY apiPref.label "Send them directly to sabnzbd via web API">
+<!ENTITY apiPref.notice "Don't forget to set API key below!">
+<!ENTITY targetPref.select "Select">
+<!ENTITY serverInfo.label "Sabnzbd server info :">
+<!ENTITY hostPref.label "IP/Host :">
+<!ENTITY portPref.label "Port :">
+<!ENTITY usernamePref.label "Username :">
+<!ENTITY passwordPref.label "Password :">
+<!ENTITY apiKeyPref.label "API Key :">
+<!ENTITY apiKeyPref.explain "(In sabnzb webpage, you can get it in &quot;Config&quot;->&quot;General&quot;)">
+
+
+
