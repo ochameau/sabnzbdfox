@@ -9,6 +9,7 @@
 <!ENTITY serverInfo.label "Sabnzbd server info :">
 <!ENTITY hostPref.label "IP/Host :">
 <!ENTITY portPref.label "Port :">
+<!ENTITY portHttps.label "Https :">
 <!ENTITY usernamePref.label "Username :">
 <!ENTITY passwordPref.label "Password :">
 <!ENTITY apiKeyPref.label "API Key :">

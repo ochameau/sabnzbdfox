@@ -3,7 +3,11 @@ var EXPORTED_SYMBOLS = ["sabnzbBridge"];
 var sabnzbBridge = {};
 
 sabnzbBridge.getSabnzbUrl = function () {
-  return "http://"+this.prefs.getCharPref("host")+":"+this.prefs.getIntPref("port")+"/sabnzbd/";
+  if (this.prefs.getBoolPref("https")) 
+    var url = "https://"
+  else
+    var url = "http://"
+  return url+this.prefs.getCharPref("host")+":"+this.prefs.getIntPref("port")+"/";
 }
 sabnzbBridge.getSabnzbUrlParams = function () {
   var user = this.prefs.getCharPref("username");
