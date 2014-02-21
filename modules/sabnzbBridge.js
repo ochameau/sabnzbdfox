@@ -7,7 +7,7 @@ sabnzbBridge.getSabnzbUrl = function () {
     var url = "https://"
   else
     var url = "http://"
-  return url+this.prefs.getCharPref("host")+":"+this.prefs.getIntPref("port")+"/";
+  return url+this.prefs.getCharPref("host")+":"+this.prefs.getIntPref("port")+"/"+this.prefs.getCharPref("path")+"/";
 }
 sabnzbBridge.getSabnzbUrlParams = function () {
   var user = this.prefs.getCharPref("username");

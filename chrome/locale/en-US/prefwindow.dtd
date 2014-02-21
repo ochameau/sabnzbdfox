@@ -7,9 +7,10 @@
 <!ENTITY apiPref.notice "Don't forget to set API key below!">
 <!ENTITY targetPref.select "Select">
 <!ENTITY serverInfo.label "Sabnzbd server info :">
+<!ENTITY portHttps.label "Https :">
 <!ENTITY hostPref.label "IP/Host :">
 <!ENTITY portPref.label "Port :">
-<!ENTITY portHttps.label "Https :">
+<!ENTITY pathPref.label "Path :">
 <!ENTITY usernamePref.label "Username :">
 <!ENTITY passwordPref.label "Password :">
 <!ENTITY apiKeyPref.label "API Key :">
