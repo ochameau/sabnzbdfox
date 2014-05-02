@@ -79,7 +79,7 @@ sabnzbBridge._readPref = function () {
     if (!this._updateInterval) {
       this._updateInterval = setInterval(function () {
         sabnzbBridge._updateStatus();
-      }, 5000);
+      }, this.prefs.getIntPref("interval") * 1000);
     }
   } else if (this._updateInterval) {
     clearInterval(this._updateInterval);

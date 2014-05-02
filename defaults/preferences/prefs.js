@@ -8,6 +8,7 @@ pref("extensions.sabnzbfox.path", "");
 pref("extensions.sabnzbfox.username", "");
 pref("extensions.sabnzbfox.password", "");
 pref("extensions.sabnzbfox.apikey", "");
+pref("extensions.sabnzbfox.interval", 30);
 
 // https://developer.mozilla.org/en/Localizing_extension_descriptions
 pref("extensions.sabnzbdfox.description", "chrome://foofox/locale/overlay.properties");
