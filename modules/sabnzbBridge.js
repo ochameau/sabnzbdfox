@@ -24,16 +24,35 @@ sabnzbBridge.sendToSabnzb = function (fileName, data) {
   var xmlhttp = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance();
   xmlhttp.QueryInterface(Components.interfaces.nsIXMLHttpRequest);
   
+  /*
   var d = new Date();
-  var boundary = '--------' + d.getTime();
-  var body = '--' + boundary + '\n';
-  body += 'Content-Disposition: form-data; name="name"; filename="' + fileName + '"\n';
-  body += 'Content-Type: application/octet-stream\n\n' + data + '\n';
-  body += '--' + boundary +'--\n';
+  var boundary = d.getTime();
+  var body = '--' + boundary + '\r\n';
+  body += 'Content-Disposition: form-data; name="output"\r\n\r\njson\r\n';
+  body += '--' + boundary + '\r\n';
+  body += 'Content-Disposition: form-data; name="mode"\r\n\r\naddfile\r\n';
+  body += '--' + boundary + '\r\n';
+  body += 'Content-Disposition: form-data; name="nzbname"\r\n\r\n' + fileName + '\r\n';
+  body += '--' + boundary + '\r\n';  
+  body += 'Content-Disposition: form-data; name="nzbfile"; filename="' + fileName + '"\r\n';
+  body += 'Content-Type: application/x-nzb\r\n\r\n';
+  body += data + '\r\n';
+  body += '--' + boundary + '\r\n';  
+  body += 'Content-Disposition: form-data; name="apikey"\r\n\r\n';
+  body += this.prefs.getCharPref("apikey") + '\r\n';
+  body += '--' + boundary + '--\r\n';
+  */
   
-  var url = this.getSabnzbUrl()+"api?mode=addfile&name="+fileName+this.getSabnzbUrlParams();
+  var d = new Date();
+  var boundary = d.getTime();
+  var body = '--' + boundary + '\r\n';
+  body += 'Content-Disposition: form-data; name="name"; filename="' + fileName + '"\r\n';
+  body += 'Content-Type: application/x-nzb\r\n\r\n' + data + '\r\n';
+  body += '--' + boundary +'--\r\n';
+  
+  var url = this.getSabnzbUrl()+"api?output=json&mode=addfile&nzbname="+fileName+this.getSabnzbUrlParams();
   xmlhttp.open('POST', url, true);
-  xmlhttp.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
+  xmlhttp.setRequestHeader('Content-Type', 'multipart/form-data; charset=UTF-8; boundary=' + boundary);
   xmlhttp.setRequestHeader('Connection', 'close');
   xmlhttp.setRequestHeader('Content-Length', body.length);
   xmlhttp.send(body);

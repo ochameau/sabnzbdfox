@@ -4,7 +4,7 @@
     <em:id>sabnzbd-fox@techno-barje.fr</em:id>
     <em:type>2</em:type>
     <em:name>sabnzbdfox</em:name>
-    <em:version>1.3-dev</em:version>
+    <em:version>1.4-dev</em:version>
     <em:description>Plug your sabnzbd in your firefox!</em:description>
     <em:optionsURL>chrome://sabnzbdfox/content/options.xul</em:optionsURL>
     <em:iconURL>chrome://sabnzbdfox/skin/sabnzbfox.png</em:iconURL>
