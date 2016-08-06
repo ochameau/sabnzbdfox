@@ -13,7 +13,6 @@
                     ondblclick="sabnzbfox.viewSabnzb()" 
                     onclick="if (event.button==2) document.getElementById('sabnzbfox-menu').showPopup();"
                     tooltiptext="SabnzbFox" insertbefore="offline-status">
-      <!-- <label id="sabnzbfox-status-label" value="NZB" /> -->
       <menupopup id="sabnzbfox-menu">
             <menuitem id="sabnzbfox-toggle" type="checkbox" label="Enable SabnzbFox" 
                       oncommand="sabnzbfox.toggle()"

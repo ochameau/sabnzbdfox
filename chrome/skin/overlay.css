@@ -1,16 +1,16 @@
 #sabnzbfox-status[off="false"] 
 {
 	width:16px;
-    height:16px;
-    background:url('sabnzb-16.png') center no-repeat;  
+	height:16px;
+	background:url('sabnzb-16.png') center no-repeat;  
 }
 
 #sabnzbfox-status[off="true"]
 {
 	opacity: 0.6;
-  	width:16px;
-    height:16px;
-    background:url('sabnzb-off.png') center no-repeat;
+	width:16px;
+	height:16px;
+	background:url('sabnzb-off.png') center no-repeat;
 }
 
 #sabnzbfox-status[off="true"] menuitem:nth-child(2) {
