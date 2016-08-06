@@ -8,12 +8,12 @@
     <stringbundle id="sabnzbdfox-strings" src="chrome://sabnzbdfox/locale/overlay.properties"/>
   </stringbundleset>
 
-  <statusbar id="status-bar">
-    <statusbarpanel id="sabnzbfox-status" class="statusbarpanel-menu-iconic" label="NZB"
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="sabnzbfox-status" class="statusbarpanel-menu-iconic"
                     ondblclick="sabnzbfox.viewSabnzb()" 
                     onclick="if (event.button==2) document.getElementById('sabnzbfox-menu').showPopup();"
                     tooltiptext="SabnzbFox" insertbefore="offline-status">
-      <label id="sabnzbfox-status-label" value="NZB" />
+      <!-- <label id="sabnzbfox-status-label" value="NZB" /> -->
       <menupopup id="sabnzbfox-menu">
             <menuitem id="sabnzbfox-toggle" type="checkbox" label="Enable SabnzbFox" 
                       oncommand="sabnzbfox.toggle()"
@@ -29,8 +29,8 @@
                       oncommand="sabnzbfox.viewSabnzb()"
                       tooltiptext="" />
       </menupopup>
-    </statusbarpanel>
-  </statusbar> 
+    </toolbarbutton>
+  </toolbarpalette> 
 
 
 </overlay>

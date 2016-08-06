@@ -4,3 +4,4 @@ locale    sabnzbdfox   en-US         chrome/locale/en-US/
 resource  sabnzbdfox                 modules/
 
 overlay   chrome://browser/content/browser.xul   chrome://sabnzbdfox/content/ff-overlay.xul
+overlay   chrome://navigator/content/navigator.xul   chrome://sabnzbdfox/content/ff-overlay.xul

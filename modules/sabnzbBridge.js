@@ -23,26 +23,7 @@ sabnzbBridge.getSabnzbUrlParams = function () {
 sabnzbBridge.sendToSabnzb = function (fileName, data) {
   var xmlhttp = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance();
   xmlhttp.QueryInterface(Components.interfaces.nsIXMLHttpRequest);
-  
-  /*
-  var d = new Date();
-  var boundary = d.getTime();
-  var body = '--' + boundary + '\r\n';
-  body += 'Content-Disposition: form-data; name="output"\r\n\r\njson\r\n';
-  body += '--' + boundary + '\r\n';
-  body += 'Content-Disposition: form-data; name="mode"\r\n\r\naddfile\r\n';
-  body += '--' + boundary + '\r\n';
-  body += 'Content-Disposition: form-data; name="nzbname"\r\n\r\n' + fileName + '\r\n';
-  body += '--' + boundary + '\r\n';  
-  body += 'Content-Disposition: form-data; name="nzbfile"; filename="' + fileName + '"\r\n';
-  body += 'Content-Type: application/x-nzb\r\n\r\n';
-  body += data + '\r\n';
-  body += '--' + boundary + '\r\n';  
-  body += 'Content-Disposition: form-data; name="apikey"\r\n\r\n';
-  body += this.prefs.getCharPref("apikey") + '\r\n';
-  body += '--' + boundary + '--\r\n';
-  */
-  
+
   var d = new Date();
   var boundary = d.getTime();
   var body = '--' + boundary + '\r\n';
