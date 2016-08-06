@@ -80,7 +80,7 @@ sabnzbfox.viewTarget = function () {
 }
 
 sabnzbfox.viewSabnzb = function () {
-  gBrowser.selectedTab = gBrowser.addTab(sabnzbBridge.getSabnzbUrl()+"queue/");
+  gBrowser.selectedTab = gBrowser.addTab(sabnzbBridge.getSabnzbUrl());
 }
 
 sabnzbfox.blink = function () {

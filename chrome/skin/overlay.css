@@ -1,14 +1,18 @@
 #sabnzbfox-status[off="false"] 
 {
-  list-style-image: url('sabnzb-16.png');
+	width:16px;
+	height:16px;
+	background:url('sabnzb-16.png') center no-repeat;  
 }
 
 #sabnzbfox-status[off="true"]
 {
-  opacity: 0.6;
-  list-style-image: url('sabnzb-off.png');
+	opacity: 0.6;
+	width:16px;
+	height:16px;
+	background:url('sabnzb-off.png') center no-repeat;
 }
 
 #sabnzbfox-status[off="true"] menuitem:nth-child(2) {
-  opacity: 0.5;
+	opacity: 0.5;
 }

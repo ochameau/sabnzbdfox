@@ -3,7 +3,11 @@ var EXPORTED_SYMBOLS = ["sabnzbBridge"];
 var sabnzbBridge = {};
 
 sabnzbBridge.getSabnzbUrl = function () {
-  return "http://"+this.prefs.getCharPref("host")+":"+this.prefs.getIntPref("port")+"/sabnzbd/";
+  if (this.prefs.getBoolPref("https")) 
+    var url = "https://"
+  else
+    var url = "http://"
+  return url+this.prefs.getCharPref("host")+":"+this.prefs.getIntPref("port")+"/"+this.prefs.getCharPref("path");
 }
 sabnzbBridge.getSabnzbUrlParams = function () {
   var user = this.prefs.getCharPref("username");
@@ -19,17 +23,17 @@ sabnzbBridge.getSabnzbUrlParams = function () {
 sabnzbBridge.sendToSabnzb = function (fileName, data) {
   var xmlhttp = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance();
   xmlhttp.QueryInterface(Components.interfaces.nsIXMLHttpRequest);
-  
+
   var d = new Date();
-  var boundary = '--------' + d.getTime();
-  var body = '--' + boundary + '\n';
-  body += 'Content-Disposition: form-data; name="name"; filename="' + fileName + '"\n';
-  body += 'Content-Type: application/octet-stream\n\n' + data + '\n';
-  body += '--' + boundary +'--\n';
+  var boundary = d.getTime();
+  var body = '--' + boundary + '\r\n';
+  body += 'Content-Disposition: form-data; name="name"; filename="' + fileName + '"\r\n';
+  body += 'Content-Type: application/x-nzb\r\n\r\n' + data + '\r\n';
+  body += '--' + boundary +'--\r\n';
   
-  var url = this.getSabnzbUrl()+"api?mode=addfile&name="+fileName+this.getSabnzbUrlParams();
+  var url = this.getSabnzbUrl()+"api?output=json&mode=addfile&nzbname="+fileName+this.getSabnzbUrlParams();
   xmlhttp.open('POST', url, true);
-  xmlhttp.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
+  xmlhttp.setRequestHeader('Content-Type', 'multipart/form-data; charset=UTF-8; boundary=' + boundary);
   xmlhttp.setRequestHeader('Connection', 'close');
   xmlhttp.setRequestHeader('Content-Length', body.length);
   xmlhttp.send(body);
@@ -75,7 +79,7 @@ sabnzbBridge._readPref = function () {
     if (!this._updateInterval) {
       this._updateInterval = setInterval(function () {
         sabnzbBridge._updateStatus();
-      }, 5000);
+      }, this.prefs.getIntPref("interval") * 1000);
     }
   } else if (this._updateInterval) {
     clearInterval(this._updateInterval);
